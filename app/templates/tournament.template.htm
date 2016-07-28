@@ -1,34 +1,35 @@
 <div class="tourney">
   <header>
+    <div class="logoPic">
+      <img src="./images/WhiteTextLogo.png">
+    </div>
     <nav class="nav">
-      <div class="logo"></div>
-      <div class="logout"><button ng-click="vm.logOff()">Logout</button></div>
+    <a href="/#/">Leaderboards!</a>
+      <div class="logout"><button class="button" ng-click="vm.logOff()">Logout</button></div>
     </nav>
   </header>
 
-  <div class="createPlayer">
+  <!-- <div class="createPlayer">
     <form ng-submit="vm.createPlayer(player)">
-      <input placeholder="Player Name" ng-model="player.name"></input>
-      <input placeholder="User Name" ng-model="player.nickname"></input>
-      <button class="submit">Submit</button>
+      <input class="input" placeholder="Player Name" ng-model="player.name"></input>
+      <input class="input" placeholder="Nickname" ng-model="player.nickname"></input>
+      <button class="button">Submit</button>
     </form>
-  </div>
+  </div> -->
 
   <div class="playerNumber">
     <span class="playerTitle">How many players are there?</span>
-    <button class="playerNumButton"> 4 </button>
-    <button class="playerNumButton"> 8 </button>
-    <button class="playerNumButton"> 12 </button>
-    <button class="playerNumButton"> 16 </button>
-    <button class="playerNumButton"> 20 </button>
+    <button class="button"> 4 </button>
+    <button class="button"> 8 </button>
+    <button class="button"> 12 </button>
+    <button class="button"> 16 </button>
+    <button class="button"> 20 </button>
   </div>
 
   <div class="addPlayer">
-    <div class="dropdownPlayers">Insert Dropdown menu here</div>
-      <ol class="playerList">
-        <li>Test object 1</li>
-        <li>Test object 2</li>
-      </ol>
-      <button class="submit">Start</button>
+    <form>
+      <input class="input" placeholder="Name"></input>
+      <button class="button">Add</button>
+      <button class="button-alt">Start</button>
   </div>
 </div>
