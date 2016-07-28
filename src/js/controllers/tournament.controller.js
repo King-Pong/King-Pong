@@ -18,7 +18,6 @@ export default function Tournament (MatchService, BackendService, $state){
               vm.players.push(MatchService.pair(vm.player, player)); // pair the two players
               vm.player = null; // reset for the next pair
           } else vm.player = player; // if we don't have a pair set
-        });
     }
 
      function start(){
