@@ -32,6 +32,7 @@ angular
     .controller('LayoutController', LayoutController)
     .controller('MatchController', MatchController)
     .controller('BracketController', BracketController)
+    .controller('TournamentController', TournamentController)
     .service('UserService', UserService)
     .service('MatchService', MatchService)
     .service('BackendService', BackendService);

@@ -1,15 +1,15 @@
 <div class="tourney">
-  <div class="nav">
-<ul>
-  <li>New Tournement</li>
-  <li>Logout</li>
-</ul>
-</div>
+  <header>
+    <nav class="nav">
+      <div class="logo"></div>
+      <div class="logout"><button ng-click="vm.logOff()">Logout</button></div>
+    </nav>
+  </header>
 
   <div class="createPlayer">
-    <form>
-      <input placeholder="Player Name"></input>
-      <input placeholder="User Name"></input>
+    <form ng-submit="vm.createPlayer(player)">
+      <input placeholder="Player Name" ng-model="player.name"></input>
+      <input placeholder="User Name" ng-model="player.nickname"></input>
       <button class="submit">Submit</button>
     </form>
   </div>
@@ -24,12 +24,11 @@
   </div>
 
   <div class="addPlayer">
-    <div class="dropdownPlayers">Insert Dropdown menu here<div>
+    <div class="dropdownPlayers">Insert Dropdown menu here</div>
       <ol class="playerList">
         <li>Test object 1</li>
         <li>Test object 2</li>
       </ol>
       <button class="submit">Start</button>
   </div>
-
 </div>
