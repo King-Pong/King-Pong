@@ -17,6 +17,7 @@ export default function SignUp (UserService, $state, $cookies) {
         UserService.login(user).then(
             // Successful Response
             resp => {
+                console.log(resp);
                 $cookies.put('access_token', resp.data.access_token);
                 $cookies.put('username', resp.data.username);
                 $state.go('root.home');
@@ -34,4 +35,4 @@ export default function SignUp (UserService, $state, $cookies) {
 
 }
 
-SignUp.$inject = ['UserService', '$state'];
+SignUp.$inject = ['UserService', '$state', '$cookies'];
