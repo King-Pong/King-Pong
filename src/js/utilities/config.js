@@ -8,7 +8,7 @@ export default function config($stateProvider, $urlRouterProvider){
     .state('root.home', {
       url: '/',
       templateUrl: 'templates/home.template.htm',
-      controller: 'ListController as vm'
+      controller: 'LeaderboardController as vm'
     })
     .state('root.login', {
         url: '/login',
