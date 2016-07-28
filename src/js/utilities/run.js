@@ -1,4 +1,4 @@
-function run ($rootScope, UserService) {
+export default function run($rootScope, UserService) {
 
   $rootScope.$on('$stateChangeSuccess', (event, toState) => {
     $rootScope.$broadcast('loginChange', UserService.isLoggedIn());
@@ -7,4 +7,3 @@ function run ($rootScope, UserService) {
 }
 
 run.$inject = ['$rootScope', 'UserService'];
-export { run };

@@ -1,22 +1,22 @@
-function ProductService (SERVER, $http, UserService) {
+export default function Backend (SERVER, $http, UserService) {
 
-  this.createProduct = createProduct;
-  this.getProducts   = getProducts;
+  this.createNewPlayer = createPlayer;
+  this.getPlayers   = getPlayers;
 
-  function shopUrl () {
+  function userUrl() {
     let user = UserService.getUser();
-    return SERVER.URL + user + '/' + SERVER.SHOP_NAME;
+    return SERVER.URL + user + '/';
   }
 
-  function createProduct (product) {
-    return $http.post(shopUrl(), product, UserService.headers());
-  }
+    function createPlayer (player) {
+        return $http.post(userUrl() + 'players/', player, UserService.headers());
+    }
 
-  function getProducts () {
-    return $http.get(shopUrl(), UserService.headers());
+
+  function getPlayers () {
+    return $http.get(userUrl() + 'players', UserService.headers());
   }
 
 }
 
-ProductService.$inject = ['SERVER', '$http', 'UserService'];
-export { ProductService };
+Backend.$inject = ['SERVER', '$http', 'UserService'];

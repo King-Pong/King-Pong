@@ -1,6 +1,5 @@
 const serverConstant = {
-    URL: 'https://quiet-waters-26668.herokuapp.com/',
-    SHOP_NAME: 'okshop'
+    URL: 'https://hackathon-team-brit.herokuapp.com/',
 };
 
 export default serverConstant;
