@@ -6,10 +6,17 @@ $black: #000000;
 html, body {
     height: 100%;
 }
+<<<<<<< HEAD
+//
+// html {
+//   font-size: 62.5%;
+// }
+=======
 
 html {
   font-size: 1em;
 }
+>>>>>>> aaa603103775b10445ea5cd800598645653b730e
 
 body {
 	background: black;
@@ -319,6 +326,32 @@ h1{
    border: solid 2px #C82440;
   }
 
+.logoPic1 img {
+  width: 30%;
+  display:block;
+  margin: auto;
+}
+
+.nav {
+  width: 95%;
+  background-color: $red;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    display: inline;
+    margin-left: 10px;
+}
+
+.nav button {
+  margin-bottom: 13px;
+  margin-left: 10px;
+}
  @media screen and (min-width: 767px) {
 .logoWrapper {
    // border: solid red 1px;
