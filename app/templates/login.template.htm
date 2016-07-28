@@ -1,17 +1,31 @@
-<div class="login">
-    <form ng-show="vm.show_login" ng-submit="vm.loginUser(user)">
-        <input class="input" type="text" placeholder="User Name" ng-model="user.username">
-        <input class="input" type="password" placeholder="Password" ng-model="user.password">
-        <button class="button is-success">Login</button>
-    </form>
-    <button ng-show="vm.show_login" ng-click="vm.toggleSignUpScreen()">Sign Up</button>
-    <button ng-hide="vm.show_login" ng-click="vm.toggleSignUpScreen()">Log In</button>
-    <form ng-hide="vm.show_login" ng-submit="vm.createUser(user)">
-        <input class="input" type="text" placeholder="First Name" ng-model="user.first_name">
-        <input class="input" type="text" placeholder="Last Name" ng-model="user.last_name">
-        <input class="input" type="text" placeholder="User Name" ng-model="user.username">
-        <input class="input" type="email" placeholder="Email" ng-model="user.email">
-        <input class="input" type="password" placeholder="Password" ng-model="user.password">
-        <button class="button is-success">Register</button>
-    </form>
+
+<div class="loginBox">
+      <div class="logoWrapper">
+        <div class="logoPic">
+          <img src="./images/WhiteTextLogo.png">
+        </div>
+      </div>
+      <div class="loginWrapper">
+            <form ng-show="show-login" ng-submit="vm.loginUser(user)">
+                <h1>Log In</h1>
+                  <input class="input" type="text" placeholder="User Name" ng-model="user.username" required>
+                  <input class="input" type="password" placeholder="Password" ng-model="user.password" required>
+              <button class="button is-success">Login</button>
+          </form>
+      </div>
+
+      <div class="resisterWrapper">   
+        <form ng-hide="show-login" ng-submit="vm.createUser(user)">
+              <h1>Register</h1>
+                  <input class="input" type="text" placeholder="First Name" ng-model="user.first_name" required>
+                  <input class="input" type="text" placeholder="Last Name" ng-model="user.last_name" required>
+                  <input class="input" type="text" placeholder="User Name" ng-model="user.username" required>
+                  <input class="input" type="email" placeholder="Email" ng-model="user.email" required>
+                  <input class="input" type="password" placeholder="Password" ng-model="user.password" required>
+            <button class="button is-success">Register</button>
+        </form>
+      </div>
+
+
 </div>
+
