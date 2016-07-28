@@ -8,8 +8,8 @@ export default function SignUp (UserService, $state, $cookies) {
 
   function createUser (user) {
       UserService.signup(user).then(resp => {
-          vm.show_login = true;
-          user.username = resp.data.username;
+          console.log(resp);
+          // vm.loginUser(resp.data);
       });
   }
 
