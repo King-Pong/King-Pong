@@ -1,12 +1,11 @@
-
 <div class="loginBox">
       <div class="logoWrapper">
         <div class="logoPic">
           <img src="./images/WhiteTextLogo.png">
         </div>
       </div>
-      <div class="loginWrapper">
-            <form ng-show="show-login" ng-submit="vm.loginUser(user)">
+      <div class="loginWrapper" ng-show="vm.show_login">
+            <form ng-submit="vm.loginUser(user)">
                 <h1>Log In</h1>
                   <input class="input" type="text" placeholder="User Name" ng-model="user.username" required>
                   <input class="input" type="password" placeholder="Password" ng-model="user.password" required>
@@ -14,8 +13,8 @@
           </form>
       </div>
 
-      <div class="resisterWrapper">   
-        <form ng-hide="show-login" ng-submit="vm.createUser(user)">
+      <div class="resisterWrapper" ng-hide="vm.show_login">   
+        <form ng-submit="vm.createUser(user)">
               <h1>Register</h1>
                   <input class="input" type="text" placeholder="First Name" ng-model="user.first_name" required>
                   <input class="input" type="text" placeholder="Last Name" ng-model="user.last_name" required>
@@ -26,6 +25,14 @@
         </form>
       </div>
 
+      <div class="switchButton">
+         <button class="button-alt" ng-show="vm.show_login" ng-click="vm.toggleSignUpScreen()">Sign Up</button>
+         <button class="button-alt" ng-hide="vm.show_login" ng-click="vm.toggleSignUpScreen()">Log In</button>
+     </div>
+
 
 </div>
+
+
+
 
