@@ -3,7 +3,7 @@ export default function SignUp (UserService, $state, $cookies) {
   let vm = this;
   vm.createUser = createUser;
   vm.loginUser = loginUser;
-  vm.show_login = true;
+  vm.show_login = false;
   vm.toggleSignUpScreen = toggleSignUpScreen;
 
   function createUser (user) {
