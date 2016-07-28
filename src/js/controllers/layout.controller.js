@@ -1,4 +1,4 @@
-export default function Layout (UserService, $rootScope, CartService) {
+export default function Layout (UserService, $rootScope) {
 
   let vm = this;
   vm.logOut = logOut;
@@ -8,26 +8,26 @@ export default function Layout (UserService, $rootScope, CartService) {
 
   init();
 
-  $rootScope.$on('loginChange', (event, status) => {
-    vm.loggedIn = status;
-  });
-
-  $rootScope.$on('cartChange', (event, product) => {
-    vm.cartCount ++;
-    vm.cartTotal += Number(product.data.price);
-  });
+  // $rootScope.$on('loginChange', (event, status) => {
+  //   vm.loggedIn = status;
+  // });
+  //
+  // $rootScope.$on('cartChange', (event, product) => {
+  //   vm.cartCount ++;
+  //   vm.cartTotal += Number(product.data.price);
+  // });
 
   function init () {
 
-    vm.loggedIn = UserService.isLoggedIn();
-
-    let products = CartService.getProducts();
-    if (products) {
-      products.forEach( product => {
-        vm.cartCount ++;
-        vm.cartTotal += Number(product.price);
-      });
-    }
+    // vm.loggedIn = UserService.isLoggedIn();
+    //
+    // let products = CartService.getProducts();
+    // if (products) {
+    //   products.forEach( product => {
+    //     vm.cartCount ++;
+    //     vm.cartTotal += Number(product.price);
+    //   });
+    // }
 
   }
 
@@ -38,4 +38,4 @@ export default function Layout (UserService, $rootScope, CartService) {
 
 }
 
-Layout.$inject = ['UserService', '$rootScope', 'CartService'];
+Layout.$inject = ['UserService', '$rootScope'];

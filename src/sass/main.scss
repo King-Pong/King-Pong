@@ -2,6 +2,9 @@ $red: #C82440;
 $silver: #D3D1D6;
 $black: #000000;
 
+html, body {
+    height: 100%;
+}
 
 html {
   font-size: 62.5%;
@@ -9,8 +12,27 @@ html {
 
 body {
 	background: black;
+    color: white;
 }
-.MainBox {
+
+
+.container {
+    position: relative;;
+    min-height: 100%;
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+.login {
+    button {
+        background: white;
+    }
+}
+
+.bracket {
    // border: solid black 3px;
    display: flex;
    align-items: center;
@@ -281,4 +303,5 @@ button:active {
 .input:active  {
    border: solid 2px #C82440;
   }
+
 

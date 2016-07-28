@@ -3,13 +3,13 @@ export default function SignUp (UserService, $state, $cookies) {
   let vm = this;
   vm.createUser = createUser;
   vm.loginUser = loginUser;
-  vm.show_login = false;
+  vm.show_login = true;
   vm.toggleSignUpScreen = toggleSignUpScreen;
 
   function createUser (user) {
       UserService.signup(user).then(resp => {
-          console.log(resp);
-          // vm.loginUser(resp.data);
+          vm.show_login = true;
+          user.username = resp.data.username;
       });
   }
 
@@ -17,6 +17,7 @@ export default function SignUp (UserService, $state, $cookies) {
         UserService.login(user).then(
             // Successful Response
             resp => {
+                console.log(resp);
                 $cookies.put('access_token', resp.data.access_token);
                 $cookies.put('username', resp.data.username);
                 $state.go('root.home');
@@ -34,4 +35,4 @@ export default function SignUp (UserService, $state, $cookies) {
 
 }
 
-SignUp.$inject = ['UserService', '$state'];
+SignUp.$inject = ['UserService', '$state', '$cookies'];
