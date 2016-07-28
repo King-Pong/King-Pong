@@ -2,32 +2,28 @@ export default function config($stateProvider, $urlRouterProvider){
   $stateProvider
     .state('root', {
       abstract: true,
-      templateUrl: 'templates/layout.tpl.html',
+      templateUrl: 'templates/layout.template.htm',
       controller: 'LayoutController as vm'
     })
-
-    // States pertaining to the store
     .state('root.home', {
       url: '/',
-      templateUrl: 'templates/home.tpl.html',
+      templateUrl: 'templates/home.template.htm',
       controller: 'ListController as vm'
     })
     .state('root.login', {
         url: '/login',
-        templateUrl: 'templates/login.tpl.html',
-        controller: 'LoginController as vm'
+        templateUrl: 'templates/login.template.htm',
+        controller: 'SignUpController as vm'
     })
     .state('root.tourney', {
-      url: '/cart',
-      templateUrl: 'templates/cart.tpl.html',
-      controller: 'CartController as vm'
+      url: '/tourney',
+      templateUrl: 'templates/tournament.template.htm',
+      controller: 'TournamentController as vm'
     })
-
-    // States pertaining to users
     .state('root.bracket', {
-      url: '/register',
-      templateUrl: 'templates/register.tpl.html',
-      controller: 'RegisterController as vm'
+      url: '/bracket',
+      templateUrl: 'templates/bracket.template.htm',
+      controller: 'BracketController as vm'
     })
 
   $urlRouterProvider.otherwise('/');
