@@ -1,3 +1,4 @@
+
 $red: #C82440;
 $darkerred: #c2243e;
 $silver: #D3D1D6;
@@ -7,12 +8,12 @@ html, body {
     height: 100%;
 }
 
-html {
-  font-size: 1em;
-}
+// html {
+//   font-size: 62.5%;
+// }
 
 body {
-	background: black;
+   background: black;
     color: white;
 }
 
@@ -38,11 +39,11 @@ body {
    display: flex;
    align-items: center;
    justify-content: center;
-   flex-flow: row wrap;
+   flex-flow: row nowrap;
    align-content: center;
-   margin: 25px auto;
-   height: 90vh;
-   width: 90vw;
+   // margin: 25px auto;
+   // height: 90vh;
+   // width: 90vmin;
 
 }
 
@@ -53,11 +54,11 @@ body {
    align-items: center;
    align-content: center;
    justify-content: center;
-   // border: solid red 1px;
-   height: 500px;
-   // width: 12vw;
+   // height: 500px;
+   width: 12vw;
    -webkit-flex: 1 0 0;
    flex: 1 0 0;
+   font-size: 2vw;
 }
 
 .name {
@@ -65,7 +66,7 @@ body {
    display: flex;
    height: 10vh;
    width: 100%;
-   font-size: 1em;
+   // font-size: 1em;
    color: white;
 }
 
@@ -101,21 +102,21 @@ body {
 }
 
 .fa {
-	color: $red;
-	font-size: 0.8em;
+   color: $red;
+   font-size: 0.8em;
 }
 
-// button {
-// 	padding: 0;
-// 	border: none;
-// 	background: none;
-// }
+#arrow1 {
+   padding: 0;
+   border: none;
+   background: none;
+}
 
 
 
 .winnerBanner {
-	font-size: 2.5em;
-	color: white;
+   font-size: 2em;
+   color: white;
 }
 
 
@@ -178,6 +179,7 @@ body {
    align-items: center;
    justify-content: center;
 }
+
 
 // ==========logo=====
 .logoWrapper {
