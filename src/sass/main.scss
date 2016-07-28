@@ -1,4 +1,5 @@
 $red: #C82440;
+$darkerred: #c2243e;
 $silver: #D3D1D6;
 $black: #000000;
 
@@ -182,8 +183,8 @@ body {
 .logoWrapper {
    // border: solid red 1px;
    display: flex;
-   height: 20vh;
-   width: 30vw;
+   height: 150px;
+   width: 250px;
    justify-content:center;
    align-items: center;
 }
@@ -195,12 +196,11 @@ body {
 
 // ============text boxes========
 .loginBox {
-  border: solid $silver 3px;
+  // border: solid $silver 3px;
    display: flex;
    align-items: center;
    justify-content: center;
    flex-direction: column;
-      // align-content: center;
    margin: 25px auto;
    // height: 90vh;
    width: 90vw;
@@ -208,26 +208,19 @@ body {
 }
 
 .loginWrapper {
-   border: solid $silver 3px;
+   // border: solid $silver 3px;
    display: flex;
    align-items: center;
    justify-content: center;
-   flex-flow: row wrap;
-   align-content: center;
-   // margin: 25px auto;
-   height: 50vh;
    width: 50vw;
 }
 
 .resisterWrapper {
-   border: solid $silver 3px;
+   // border: solid $silver 3px;
    display: flex;
    align-items: center;
    justify-content: center;
-   flex-flow: row wrap;
-   align-content: center;
    margin-top: 10px;
-   height: 50vh;
    width: 50vw;
 }
 
@@ -237,19 +230,13 @@ h1{
    color: $silver;
 }
 
-// button {
-//    display: flex;
-//    justify-content: center;
-//    color: white;
-// }
 
 
-button {
+
+.button {
     display: flex;
     justify-content: center;
-    font-size: 16px;
-    font-family: Arial;
-    font-weight: normal;
+    font-size: 1em;
     text-decoration: inherit;
     -webkit-border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
@@ -271,13 +258,41 @@ button {
     margin-top: 10px;
 }
 
-button:hover {
+.button:hover {
     background: -webkit-linear-gradient(90deg, #f9f9f9 5%, #e9e9e9 100%);
     background: -moz-linear-gradient(90deg, #f9f9f9 5%, #e9e9e9 100%);
     background: -ms-linear-gradient(90deg, #f9f9f9 5%, #e9e9e9 100%);
     background: linear-gradient(180deg, #e9e9e9 5%, #f9f9f9 100%);
 }
-button:active {
+.button:active {
+    position:relative;
+    top: 1px;
+}
+
+
+.button-alt {
+    display: flex;
+    justify-content: center;
+    font-size: 1em;
+    // text-decoration: inherit;
+    border: 2px solid #dcdcdc;
+    border-radius: 10px 10px 10px 10px;
+    padding: 1px 19px;
+    // text-shadow: 1px 1px 0px #ffffff;
+    // box-shadow: inset 1px 1px 0px 0px #ffffff;
+    cursor: pointer;
+    color: $silver;
+    // display: inline-block;
+    background: linear-gradient(180deg, $red 5%, $darkerred 100%);
+    outline: none;
+    margin-top: 10px;
+}
+
+.button-alt:hover {
+    // background: linear-gradient(180deg, $darkerred 5%, $red 100%);
+}
+
+.button-alt:active {
     position:relative;
     top: 1px;
 }
@@ -286,12 +301,12 @@ button:active {
 .input {
    display: flex;
    margin-top: 10px;
-   width: 352px;
-   height: 30px;
+   width: 40vw;
+   // height: 5vh;
    border: outset 2px ;
    padding: 2px;
    border-radius: 10px;
-   font-size: 16px;
+   font-size: 1em;
    background-color: #FFFFFF;
    outline: none;
    color: $silver;
@@ -304,4 +319,14 @@ button:active {
    border: solid 2px #C82440;
   }
 
+ @media screen and (min-width: 767px) {
+.logoWrapper {
+   // border: solid red 1px;
+   display: flex;
+   height: 20vh;
+   width: 40vw;
+   justify-content:center;
+   align-items: center;
+}
+ }
 
