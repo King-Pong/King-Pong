@@ -1,8 +1,9 @@
-function CartService ($cookies) {
+export default function Match ($cookies) {
 
   this.pushProducts = pushProducts;
   this.getProducts  = getProducts;
 
+  this.pair = pairPlayers;
 
   function pushProducts (product) {
     let products = $cookies.getObject('products');
@@ -22,7 +23,10 @@ function CartService ($cookies) {
     return { name: product.data.name, price: product.data.price, id: product.id };
   }
 
+  function pairPlayers(player1, player2){
+    return { player1: player1, player2: player2 };
+  }
+
 }
 
-CartService.$inject = ['$cookies'];
-export { CartService };
+Match.$inject = ['$cookies'];
