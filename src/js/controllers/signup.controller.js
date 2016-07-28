@@ -3,13 +3,13 @@ export default function SignUp (UserService, $state, $cookies) {
   let vm = this;
   vm.createUser = createUser;
   vm.loginUser = loginUser;
-  vm.show_login = true;
+  vm.show_login = false;
   vm.toggleSignUpScreen = toggleSignUpScreen;
 
   function createUser (user) {
       UserService.signup(user).then(resp => {
-          vm.show_login = true;
-          user.username = resp.data.username;
+          console.log(resp);
+          // vm.loginUser(resp.data);
       });
   }
 
@@ -34,4 +34,4 @@ export default function SignUp (UserService, $state, $cookies) {
 
 }
 
-SignUp.$inject = ['UserService', '$state'];
+SignUp.$inject = ['UserService', '$state', '$cookies'];
