@@ -14,6 +14,7 @@
 
   <div class="playerNumber">
     <span class="playerTitle">How many players are there?</span>
+    <div class="button-row">
     <button class="button" ng-click="vm.setTourneySize(4)"> 4 </button>
     <button class="button" ng-click="vm.setTourneySize(8)"> 8 </button>
     <button class="button" ng-click="vm.setTourneySize(12)"> 12 </button>
@@ -25,12 +26,15 @@
 <hr>
 
   <div class="addPlayer">
-    <form>
+    <form class="addPlayerForm">
       <input class="input" placeholder="Enter Player Name" ng-model="player.fullname" ng-keyup="vm.validate(player.fullname)">
       <button class="button" ng-click="vm.createPlayer(player)">Add New Player</button>
       <button class="button-alt">Start</button>
+    </form>
 
   </div>
+
+<div class="playerBox">
   <table class="playerResults" ng-show="vm.playerResults.length">
       <tr ng-repeat="Player in vm.playerResults">
           <td class="player-name">{{ Player.fullname }}</td>
@@ -38,26 +42,14 @@
           <td class="add"><button class="button" ng-click="vm.addPlayer(Player.id)">Add to Tournament</button></td>
       </tr>
   </table>
+</div>
 
 <hr>
 
   <div class="playersList">
     <span class="playersTitle">Players</span>
     <hr>
-      <span>1. First Lastname</span>
-      <span>2. First Lastname</span>
-      <span>3. First Lastname</span>
-      <span>4. First Lastname</span>
-      <span>5. First Lastname</span>
-      <span>6. First Lastname</span>
-      <span>7. First Lastname</span>
-      <span>8. First Lastname</span>
-      <span>9. First Lastname</span>
-      <span>10. First Lastname</span>
-      <span>11. First Lastname</span>
-      <span>12. First Lastname</span>
-      <span>13. First Lastname</span>
-      <span>14. First Lastname</span>
-      <span>15. First Lastname</span>
-      <span>16. First Lastname</span>
+      <ol>
+        <li ng-repeat="Player in vm.players"> {{ Player.fullname }} / {{ Player.nickname }}</li>
+      </ol>
 </div>
