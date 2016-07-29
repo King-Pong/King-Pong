@@ -6,20 +6,29 @@ export default function Tournament (MatchService, BackendService, UserService, $
     vm.createPlayer = createPlayer;
     vm.start = start;
     vm.players = [];
+    vm.playerList = getPlayerList() || [];
 
     function createPlayer(player){
-        BackendService.createNewPlayer(player).then(resp => {
-            vm.addPlayer(resp.data);
-            console.log(resp)
-        });
+        if (player.nickname = prompt("Please provide a player nickname:"))
+            BackendService.createNewPlayer(player).then(resp => {
+                console.log(resp, resp.data);
+                vm.addPlayer(resp.data);
+            }, err => { console.log(err); });
+    }
+
+    function validatePlayer(player){
+        if (vm.playerList){
+            vm.playerResults = [];
+            vm.playerList.forEach(p => {
+                if (p.fullname.toLowerCase().includes(player.fullname.toLowerCase()) ||
+                p.nickname.toLowerCase().includes(player.fullname.toLowerCase()))
+                    vm.playerResults.push(p);
+            });
+        }
     }
 
     function addPlayer(player){
-        // collect two players for a match
-          if (vm.player) { // if we have the first player
-              vm.players.push(MatchService.pair(vm.player, player)); // pair the two players
-              vm.player = null; // reset for the next pair
-          } else vm.player = player; // if we don't have a pair set
+        vm.players.push(player);
     }
 
      function start(){
@@ -29,6 +38,13 @@ export default function Tournament (MatchService, BackendService, UserService, $
      function logOff() {
        UserService.logOut();
        $state.go('root.login');
+     }
+
+     function getPlayerList(){
+         BackendService.getPlayers().then(resp => {
+             vm.playerList = resp.data.players;
+             console.log(vm.playerList);
+         });;
      }
 }
 Tournament.$inject = ['MatchService', 'BackendService', 'UserService', '$state'];

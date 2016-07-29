@@ -1,21 +1,21 @@
 export default function Backend (SERVER, $http, UserService) {
 
-  this.createNewPlayer = createPlayer;
-  this.getPlayers   = getPlayers;
+    this.createNewPlayer = createPlayer;
+    this.getPlayers      = getPlayers;
 
-  function userUrl() {
-    let user = UserService.getUser();
-    return SERVER.URL + user + '/';
-  }
+    function userUrl() {
+        let user = UserService.getUser();
+        return SERVER.URL + user + '/';
+    }
 
-    function createPlayer (player) {
-        return $http.post(userUrl() + 'players/', player, UserService.headers());
+    function createPlayer(player) {
+        return $http.post(SERVER.URL + 'players', player, UserService.headers());
     }
 
 
-  function getPlayers () {
-    return $http.get(userUrl() + 'players', UserService.headers());
-  }
+    function getPlayers(){
+        return $http.get(SERVER.URL + 'players', UserService.headers());
+    }
 
 }
 
