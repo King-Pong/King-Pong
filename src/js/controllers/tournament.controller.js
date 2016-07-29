@@ -61,15 +61,17 @@ export default function Tournament (MatchService, BackendService, UserService, $
      }
 
      function startTournament(){
-         let options = {
-             title: vm.name,
-             size: vm.size
-         };
-         console.log(options);
-         BackendService.newTournament(options).then(resp => {
-             console.log(resp);
-             $state.go('root.bracket');
-         });
+         if (vm.name){
+             let options = {
+                 title: vm.name,
+                 size: vm.size
+             };
+             console.log(options);
+             BackendService.newTournament(options).then(resp => {
+                 console.log(resp);
+                 $state.go('root.bracket');
+             });
+         } else alert("Please enter a tournament name.");
      }
 }
 Tournament.$inject = ['MatchService', 'BackendService', 'UserService', '$state'];
