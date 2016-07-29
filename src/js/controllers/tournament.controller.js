@@ -66,9 +66,18 @@ export default function Tournament (MatchService, BackendService, UserService, $
                  title: vm.name,
                  size: vm.size
              };
-             console.log(options);
              BackendService.newTournament(options).then(resp => {
-                 console.log(resp);
+                 console.log("new tourney", resp);
+                 let tourneyID = resp.data.id;
+                 BackendService.addPlayers(tourneyID, vm.players).then(resp => {
+                     BackendService.getMatches(tourneyID).then(resp => {
+                         console.log("Matches: ", resp);
+                     });
+                 });
+                //  vm.players.forEach(p => {
+                //      BackendService.addContender(resp.data.id, p.id);
+                //  });
+                //
                  $state.go('root.bracket');
              });
          } else alert("Please enter a tournament name.");

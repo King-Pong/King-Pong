@@ -4,6 +4,9 @@ export default function Backend (SERVER, $http, UserService) {
     this.getPlayers      = getPlayers;
     this.newTournament = newTournament;
     this.getTournament = getTournament;
+    this.addContender = addContender;
+    this.getMatches = getMatches;
+    this.addPlayers = addPlayers;
 
     function userUrl() {
         let user = UserService.getUser();
@@ -24,6 +27,20 @@ export default function Backend (SERVER, $http, UserService) {
 
     function getTournament(options){
         return $http.post(SERVER.URL + 'tournaments', options, UserService.headers());
+    }
+
+    function addContender(tourneyID, playerID){
+        return $http.post(SERVER.URL + 'tournaments/' + tourneyID + '/add-player', { player_id: playerID },
+              UserService.headers());
+    };
+
+    function addPlayers(tourneyID, players){
+        let promises = players.map(function (p) { addContender(tourneyID, p.id) });
+        return Promise.all(promises);
+    }
+
+    function getMatches(tourneyID){
+        return $http.post(SERVER.URL + 'tournaments/' + tourneyID + '/seed', {}, UserService.headers())
     }
 
 }
