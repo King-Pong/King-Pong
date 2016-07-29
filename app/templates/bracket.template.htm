@@ -13,14 +13,14 @@
 <div class="bracket">
     <div class="column column-1">
         <div class="name name-1">
-          <span>Tony Southern</span>
+          <span>{{ vm.matches[0].player1.fullname || '' }}</span>
              <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-right"></button></a>
         </div>
         <div class="space space-1">
           <span></span>
         </div>
         <div class="name name-2">
-          <span>match 1</span>
+          <span>{{ vm.matches[0].player2.fullname || '' }}</span>
              <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-right"></button></a>
         </div>
 
@@ -29,14 +29,14 @@
         </div>
 
         <div class="name name-1">
-          <span>match 2</span>
+          <span>{{ vm.matches[1].player1.fullname || '' }}</span>
           <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-right"></button></a>
         </div>
         <div class="space space-1">
           <span></span>
         </div>
         <div class="name name-2">
-          <span>match 2</span>
+          <span>{{ vm.matches[1].player2.fullname || '' }}</span>
           <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-right"></button></a>
         </div>
     </div>
@@ -46,7 +46,7 @@
     <div class="column column-2">
         <div class="name name-1">
         <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-left"></button></a>
-          <span>match 3</span>
+          <span>{{ vm.matches[2].player1.fullname || '' }}</span>
           <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-right"></button></a>
 
         </div>
@@ -55,7 +55,7 @@
         </div>
         <div class="name name-2">
            <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-left"></button></a>
-             <span>match 3</span>
+             <span>{{ vm.matches[2].player1.fullname || '' }}</span>
           <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-right"></button></a>
         </div>
     </div>
@@ -63,7 +63,7 @@
     <div class="column column-3">
         <div class="name name-1">
           <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-left"></button></a>
-           <span>match 7</span>
+           <span>{{ vm.matches[6].player1.fullname || '' }}</span>
           <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-right"></button></a>
         </div>
     </div>
@@ -75,7 +75,7 @@
     <div class="column column-4">
         <div class="name name-1">
             <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-left"></button></a>
-               <span>match 7</span>
+               <span>{{ vm.matches[6].player2.fullname || '' }}</span>
            <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-right"></button></a>
         </div>
     </div>
@@ -83,7 +83,7 @@
     <div class="column column-5">
         <div class="name name-3">
             <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-left"></button></a>
-              <span>match 6</span>
+              <span>{{ vm.matches[5].player1.fullname || '' }}</span>
             <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-right"></button></a>
         </div>
         <div class="space space-6">
@@ -91,7 +91,7 @@
         </div>
         <div class="name name-4">
            <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-left"></button></a>
-              <span>match 6</span>
+              <span>{{ vm.matches[5].player2.fullname || '' }}</span>
            <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-right"></button></a>
         </div>
     </div>
@@ -99,14 +99,14 @@
     <div class="column column-6">
         <div class="name name-3">
             <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-left"></button></a>
-              <span>match 4</span>
+              <span>{{ vm.matches[3].player1.fullname || '' }}</span>
         </div>
         <div class="space space-4">
           <span></span>
         </div>
         <div class="name name-4">
             <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-left"></button></a>
-              <span>match 4</span>
+              <span>{{ vm.matches[3].player2.fullname || '' }}</span>
         </div>
 
         <div class="space space-5">
@@ -115,14 +115,14 @@
 
         <div class="name name-3">
             <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-left"></button></a>
-              <span>match 5</span>
+              <span>{{ vm.matches[4].player1.fullname || '' }}</span>
         </div>
         <div class="space space-4">
           <span></span>
         </div>
         <div class="name name-4">
             <a href="#"><button id="arrow1" class="fa  fa-arrow-circle-left"></button></a>
-              <span>match 5</span>
+              <span>{{ vm.matches[4].player2.fullname || '' }}</span>
         </div>
     </div>
 </div>

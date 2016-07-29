@@ -21,7 +21,7 @@ export default function config($stateProvider, $urlRouterProvider){
       controller: 'TournamentController as vm'
     })
     .state('root.bracket', {
-      url: '/bracket',
+      url: '/bracket/:id',
       templateUrl: 'templates/bracket.template.htm',
       controller: 'BracketController as vm'
     })
