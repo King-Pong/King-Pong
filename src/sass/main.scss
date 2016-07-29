@@ -12,8 +12,9 @@ html, body {
 // }
 
 body {
-   background: black;
+    background: black;
     color: white;
+    font: 15px Abel;
 }
 
 
@@ -360,13 +361,27 @@ h1{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // border: solid red 1px; 
-  margin-top: 20px; 
+  // border: solid red 1px;
+  margin-top: 20px;
+}
+
+.title {
+    font-size: 3.1vw;
+    padding: 0.25em 0;
+    outline-color: $red;
+    color: lighten($red, 7%);
+    &:hover {
+        color: white;
+    }
+    &:focus {
+        color: black;
+        background: white;
+    }
 }
 
 .playerTitle {
   // border: solid red 1px;
-  font-size: 3vw
+  font-size: 2vw;
 }
 
 .button-row {
@@ -381,7 +396,7 @@ h1{
   flex-direction: column;
   justify-content: center;
   // border: solid red 1px;
-  margin-top: 20px; 
+  margin-top: 20px;
 
 }
 
@@ -454,9 +469,11 @@ ol {
     // margin: 0px;
 }
 
+
 ul{
     padding: 0px;  
 }
+
 
 
 .leaderName{
@@ -469,7 +486,11 @@ ul{
   list-style: none;
 }
 
+.addPlayerForm {
+  margin: 0 auto;
+}
 
-
-
-
+.playerBox {
+  height: 250px;
+  overflow: auto;
+}

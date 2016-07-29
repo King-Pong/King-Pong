@@ -1,6 +1,7 @@
 import angular from 'angular';
 import 'angular-ui-router';
 import 'angular-cookies';
+import 'ng-content-editable';
 
 // IMPORT UTILITIES
 import config from './utilities/config';
@@ -22,7 +23,7 @@ import MatchService from './services/match.service';
 import BackendService from './services/backend.service';
 
 angular
-    .module('app', ['ui.router', 'ngCookies'])
+    .module('app', ['ui.router', 'ngCookies', 'content-editable'])
     .config(config)
     .run(run)
     .constant('SERVER', SERVER)
