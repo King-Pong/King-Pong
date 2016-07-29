@@ -10,6 +10,8 @@ export default function Tournament (MatchService, BackendService, UserService, $
     vm.setTourneySize = setSize;
     vm.playerResults = [];
     vm.validate = validatePlayer;
+    vm.gameReady = false;
+    vm.start = startTournament;
 
     function createPlayer(player){
         if (player.nickname = prompt("Please provide a player nickname:"))
@@ -29,10 +31,12 @@ export default function Tournament (MatchService, BackendService, UserService, $
     }
 
     function addPlayer(player){
-        if (typeof player == 'number'){
+        if (typeof player == 'number')
             player = vm.playerList.filter(p => p.id === player)[0];
-        }
         vm.players.push(player);
+        if (vm.size === vm.players.length){
+            vm.gameReady = true;
+        }
         console.log(vm.players);
     }
 
@@ -54,6 +58,18 @@ export default function Tournament (MatchService, BackendService, UserService, $
 
      function setSize(size){
          vm.size = size;
+     }
+
+     function startTournament(){
+         let options = {
+             title: vm.name,
+             size: vm.size
+         };
+         console.log(options);
+         BackendService.newTournament(options).then(resp => {
+             console.log(resp);
+             $state.go('root.bracket');
+         });
      }
 }
 Tournament.$inject = ['MatchService', 'BackendService', 'UserService', '$state'];

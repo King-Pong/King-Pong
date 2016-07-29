@@ -30,7 +30,6 @@
     <form class="addPlayerForm">
       <input class="input" placeholder="Enter Player Name" ng-model="player.fullname" ng-keyup="vm.validate(player.fullname)">
       <button class="button" ng-click="vm.createPlayer(player)">Add New Player</button>
-      <button class="button-alt">Start</button>
     </form>
 
   </div>
@@ -53,4 +52,5 @@
       <ol>
         <li ng-repeat="Player in vm.players"> {{ Player.fullname }} / {{ Player.nickname }}</li>
       </ol>
+      <button class="button-alt" ng-show="vm.gameReady" ng-click="vm.start()">Start Tournament</button>
 </div>
