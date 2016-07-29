@@ -9,12 +9,12 @@ export default function Backend (SERVER, $http, UserService) {
   }
 
     function createPlayer (player) {
-        return $http.post(userUrl() + 'players/', player, UserService.headers());
+        return $http.post(SERVER.URL + 'players', player, UserService.headers());
     }
 
 
   function getPlayers () {
-    return $http.get(userUrl() + 'players', UserService.headers());
+    return $http.get(SERVER.URL + 'players', UserService.headers());
   }
 
 }

@@ -4,7 +4,7 @@
     <img src="./images/textlogonav.png">
   </div>
   <nav class="nav">
-    <a class="logout"><button class="button" ng-click="vm.logOut()">Logout</button></a>
+    <a class="logout"><button class="button" ng-click="vm.logOff()">Logout</button></a>
     <a href="/#/">Leaderboards!</a>
     </nav>
   </header>
@@ -28,8 +28,8 @@
 
   <div class="addPlayer">
     <form>
-      <input class="input" placeholder="Name"></input>
-      <button class="button">Add</button>
+      <input class="input" placeholder="Enter Player Name" ng-model="player.fullname">
+      <button class="button" ng-click="vm.createPlayer(player)">Add</button>
       <button class="button-alt">Start</button>
   </div>
 </div>
