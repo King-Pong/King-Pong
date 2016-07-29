@@ -1,35 +1,72 @@
 <header>
   <div class="navCont">
-  <div class="logoPic1">
-    <img src="./images/textlogonav.png">
+    <div class="logoPic1">
+      <img src="./images/textlogonav.png">
+    </div>
   </div>
   <nav class="nav">
-    <a class="logout"><button class="button" ng-click="vm.logOff()">Logout</button></a>
-    <a href="/#/">Leaderboards!</a>
+
+      <a class="logout"><button class="button" ng-click="vm.logOut()">Logout</button></a>
+      <a href="/#/">Leaderboards!</a>
+
     </nav>
-  </header>
+</header>
 
-  <!-- <div class="createPlayer">
-    <form ng-submit="vm.createPlayer(player)">
-      <input class="input" placeholder="Player Name" ng-model="player.name"></input>
-      <input class="input" placeholder="Nickname" ng-model="player.nickname"></input>
-      <button class="button">Submit</button>
-    </form>
-  </div> -->
 
-  <div class="playerNumber">
-    <span class="playerTitle">How many players are there?</span>
-    <button class="button"> 4 </button>
-    <button class="button"> 8 </button>
-    <button class="button"> 12 </button>
-    <button class="button"> 16 </button>
-    <button class="button"> 20 </button>
-  </div>
+<div class="contentsWrapper"> 
+    <div class="createPlayer">
+      <form ng-submit="vm.createPlayer(player)">
+        <input class="input" placeholder="Player Name" ng-model="player.name"></input>
+        <input class="input" placeholder="Nickname" ng-model="player.nickname"></input>
+        <button class="button">Submit</button>
+      </form>
+    </div>
+
+<hr>
+
+    <div class="playerNumber">
+      <span class="playerTitle">How many players are there?</span>
+        <div class="button-row" >
+          <button class="button"> 4 </button>
+          <button class="button"> 8 </button>
+          <button class="button"> 12 </button>
+          <button class="button"> 16 </button>
+          <button class="button"> 20 </button>
+        </div>
+    </div>
+
+
+<hr>
 
   <div class="addPlayer">
     <form>
       <input class="input" placeholder="Enter Player Name" ng-model="player.fullname">
       <button class="button" ng-click="vm.createPlayer(player)">Add</button>
       <button class="button-alt">Start</button>
+
   </div>
+
+<hr>
+
+  <div class="playersList">
+    <span class="playersTitle">Players</span>
+    <hr>
+      <span>1. First Lastname</span>
+      <span>2. First Lastname</span>
+      <span>3. First Lastname</span>
+      <span>4. First Lastname</span>
+      <span>5. First Lastname</span>
+      <span>6. First Lastname</span>
+      <span>7. First Lastname</span>
+      <span>8. First Lastname</span>
+      <span>9. First Lastname</span>
+      <span>10. First Lastname</span>
+      <span>11. First Lastname</span>
+      <span>12. First Lastname</span>
+      <span>13. First Lastname</span>
+      <span>14. First Lastname</span>
+      <span>15. First Lastname</span>
+      <span>16. First Lastname</span>
+
+
 </div>
