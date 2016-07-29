@@ -19,17 +19,24 @@
 
   <div class="playerNumber">
     <span class="playerTitle">How many players are there?</span>
-    <button class="button"> 4 </button>
-    <button class="button"> 8 </button>
-    <button class="button"> 12 </button>
-    <button class="button"> 16 </button>
-    <button class="button"> 20 </button>
+    <button class="button" ng-click="vm.setTourneySize(4)"> 4 </button>
+    <button class="button" ng-click="vm.setTourneySize(8)"> 8 </button>
+    <button class="button" ng-click="vm.setTourneySize(12)"> 12 </button>
+    <button class="button" ng-click="vm.setTourneySize(16)"> 16 </button>
+    <button class="button" ng-click="vm.setTourneySize(20)"> 20 </button>
   </div>
 
   <div class="addPlayer">
     <form>
-      <input class="input" placeholder="Enter Player Name" ng-model="player.fullname">
+      <input class="input" placeholder="Enter Player Name" ng-model="player.fullname" ng-keyup="vm.validate(player.fullname)">
       <button class="button" ng-click="vm.createPlayer(player)">Add</button>
       <button class="button-alt">Start</button>
   </div>
+  <table class="playerResults" ng-show="vm.playerResults.length">
+      <tr ng-repeat="Player in vm.playerResults">
+          <td class="player-name">{{ Player.fullname }}</td>
+          <td class="nickname">{{ Player.nickname }}</td>
+          <td class="add"><button class="button" ng-click="vm.addPlayer(Player.id)">Add to Tournament</button></td>
+      </tr>
+  </table>
 </div>
