@@ -3,6 +3,13 @@ $red: #CF0000;
 $darkerred: #c2243e;
 $silver: #D3D1D6;
 
+@mixin FLEXED ($dir, $justify, $align){
+  display: flex;  
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+}
+
 html, body {
     height: 100%;
 }
@@ -20,11 +27,10 @@ body {
 
  footer {
   // border: solid red 1px;
-  display: flex;
-  justify-content: center;
+  @include FLEXED(row, center, center)
   width: 100vw;
-  align-items: center;
   font-size: 1.5vw;
+  margin: 10px;
   }
 
 
@@ -49,11 +55,8 @@ body {
 
 
 .column {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+  @include FLEXED (column, center, center)
    align-content: center;
-   justify-content: center;
    // height: 500px;
    width: 12vw;
    -webkit-flex: 1 0 0;
@@ -232,7 +235,7 @@ h1{
 }
 
 .button {
-    font-size: 1em;
+    font-size: .8em;
     border-radius: 10px 10px 10px 10px;
     border: 2px solid #dcdcdc;
     display: inline-block;
@@ -242,7 +245,7 @@ h1{
     cursor: pointer;
     color: $red;
     outline: none;
-    margin-top: 10px;
+    margin: 10px;
 }
 
 .button:hover {
@@ -255,7 +258,7 @@ h1{
 
 
 .button-alt {
-    font-size: 1em;
+    font-size: .8em;
     // text-decoration: inherit;
     border: 2px solid #dcdcdc;
     border-radius: 10px 10px 10px 10px;
@@ -266,7 +269,7 @@ h1{
     // background: linear-gradient(180deg, $red 5%, $darkerred 100%);
     background: $red;
     outline: none;
-    margin-top: 10px;
+    margin: 10px;
 }
 
 .button-alt:hover {
@@ -278,6 +281,20 @@ h1{
     top: 1px;
 }
 
+.playerButton {
+    font-size: .8em;
+    border-radius: 10px 10px 10px 10px;
+    border: 2px solid #dcdcdc;
+    display: inline-block;
+    // padding: 1px 19px;
+    // text-shadow: 1px 1px 0px #ffffff;
+    // box-shadow: inset 1px 1px 0px 0px #ffffff;
+    cursor: pointer;
+    color: $red;
+    outline: none;
+    margin: 10px;
+    width: 30px;
+}
 
 .input {
    display: flex;
@@ -368,14 +385,19 @@ h1{
 .title {
     font-size: 3.1vw;
     padding: 0.25em 0;
-    outline-color: $red;
     color: lighten($red, 7%);
+    width: 50%;
+    border-radius: 10px;
+    margin: 0 auto;
+    overflow: auto;
     &:hover {
         color: white;
     }
     &:focus {
         color: black;
+        outline: none;
         background: white;
+        border: solid 2px $red;
     }
 }
 
@@ -409,12 +431,20 @@ h1{
   justify-content: center;
   margin-top: 20px;
   margin-bottom: 20px;
+  font-size: 2em;
 
 }
 
 .playersTitle {
+  // border: solid red 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $red;
+  width: 100vw;
   margin-top: 10px;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
+  font-size: 2em;
 }
 
 hr {
@@ -448,11 +478,8 @@ hr {
 
 .header {
   // border: solid yellow 1px;
-  display: flex;
+  @include FLEXED (column, center, center)
   width: 100%;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
   font-size: 2vw;
   color: $red;
 }
