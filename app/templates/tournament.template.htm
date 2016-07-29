@@ -1,21 +1,16 @@
 <header>
   <div class="navCont">
-  <div class="logoPic1">
-    <img src="./images/textlogonav.png">
+    <div class="logoPic1">
+      <img src="./images/textlogonav.png">
+    </div>
   </div>
   <nav class="nav">
-    <a class="logout"><button class="button" ng-click="vm.logOff()">Logout</button></a>
-    <a href="/#/">Leaderboards!</a>
+
+      <a class="logout"><button class="button" ng-click="vm.logOut()">Logout</button></a>
+      <a href="/#/">Leaderboards!</a>
+
     </nav>
   </header>
-
-  <!-- <div class="createPlayer">
-    <form ng-submit="vm.createPlayer(player)">
-      <input class="input" placeholder="Player Name" ng-model="player.name"></input>
-      <input class="input" placeholder="Nickname" ng-model="player.nickname"></input>
-      <button class="button">Submit</button>
-    </form>
-  </div> -->
 
   <div class="playerNumber">
     <span class="playerTitle">How many players are there?</span>
@@ -25,12 +20,16 @@
     <button class="button" ng-click="vm.setTourneySize(16)"> 16 </button>
     <button class="button" ng-click="vm.setTourneySize(20)"> 20 </button>
   </div>
+</header>
+
+<hr>
 
   <div class="addPlayer">
     <form>
       <input class="input" placeholder="Enter Player Name" ng-model="player.fullname" ng-keyup="vm.validate(player.fullname)">
-      <button class="button" ng-click="vm.createPlayer(player)">Add</button>
+      <button class="button" ng-click="vm.createPlayer(player)">Add New Player</button>
       <button class="button-alt">Start</button>
+
   </div>
   <table class="playerResults" ng-show="vm.playerResults.length">
       <tr ng-repeat="Player in vm.playerResults">
@@ -39,4 +38,26 @@
           <td class="add"><button class="button" ng-click="vm.addPlayer(Player.id)">Add to Tournament</button></td>
       </tr>
   </table>
+
+<hr>
+
+  <div class="playersList">
+    <span class="playersTitle">Players</span>
+    <hr>
+      <span>1. First Lastname</span>
+      <span>2. First Lastname</span>
+      <span>3. First Lastname</span>
+      <span>4. First Lastname</span>
+      <span>5. First Lastname</span>
+      <span>6. First Lastname</span>
+      <span>7. First Lastname</span>
+      <span>8. First Lastname</span>
+      <span>9. First Lastname</span>
+      <span>10. First Lastname</span>
+      <span>11. First Lastname</span>
+      <span>12. First Lastname</span>
+      <span>13. First Lastname</span>
+      <span>14. First Lastname</span>
+      <span>15. First Lastname</span>
+      <span>16. First Lastname</span>
 </div>
