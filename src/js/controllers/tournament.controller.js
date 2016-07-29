@@ -41,7 +41,10 @@ export default function Tournament (MatchService, BackendService, UserService, $
      }
 
      function getPlayerList(){
-         return BackendService.getPlayers();
+         BackendService.getPlayers().then(resp => {
+             vm.playerList = resp.data.players;
+             console.log(vm.playerList);
+         });;
      }
 }
 Tournament.$inject = ['MatchService', 'BackendService', 'UserService', '$state'];
