@@ -12,8 +12,9 @@ html, body {
 // }
 
 body {
-   background: black;
+    background: black;
     color: white;
+    font: 15px Abel;
 }
 
 
@@ -360,13 +361,27 @@ h1{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // border: solid red 1px; 
-  margin-top: 20px; 
+  // border: solid red 1px;
+  margin-top: 20px;
+}
+
+.title {
+    font-size: 3.1vw;
+    padding: 0.25em 0;
+    outline-color: $red;
+    color: lighten($red, 7%);
+    &:hover {
+        color: white;
+    }
+    &:focus {
+        color: black;
+        background: white;
+    }
 }
 
 .playerTitle {
   // border: solid red 1px;
-  font-size: 3vw
+  font-size: 2vw;
 }
 
 .button-row {
@@ -381,7 +396,7 @@ h1{
   flex-direction: column;
   justify-content: center;
   // border: solid red 1px;
-  margin-top: 20px; 
+  margin-top: 20px;
 
 }
 
@@ -445,12 +460,12 @@ hr {
 }
 
 // .Table-header {
-//   border: solid green 1px; 
+//   border: solid green 1px;
 //   background-color: $silver;
 // }
 
 // .Table-row {
-//   border: solid orange 1px; 
+//   border: solid orange 1px;
 //   display: flex;
 //   // flex-flow: row-nowrap;
 //   // width: 30vw;
@@ -461,8 +476,3 @@ hr {
 //   display: flex;
 //   // flex-flow: row-nowrap;
 // }
-
-
-
-
-
