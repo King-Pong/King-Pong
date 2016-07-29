@@ -33,7 +33,7 @@ export default function Tournament (MatchService, BackendService, UserService, $
     function addPlayer(player){
         if (typeof player == 'number')
             player = vm.playerList.filter(p => p.id === player)[0];
-        vm.players.push(player);
+        if (vm.players.length < vm.size) vm.players.push(player);
         if (vm.size === vm.players.length){
             vm.gameReady = true;
         }
